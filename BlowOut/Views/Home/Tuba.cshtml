@@ -3,5 +3,19 @@
     ViewBag.Title = "Tuba";
 }
 
-<h2>Tuba</h2>
-
+<h1>Tuba</h1>
+<img src="~/Content/images/tuba.jpg" />
+<br />
+<br />
+<button onclick="myNewFunction()">New</button>
+<span>&nbsp;&nbsp;</span>
+<button onclick="myUsedFunction()">Used</button>
+<script>
+    function myNewFunction() {
+        document.getElementById("priceDisplay").innerHTML = "The Price to rent a NEW tuba is: $70 a month";
+    }
+    function myUsedFunction() {
+        document.getElementById("priceDisplay").innerHTML = "The Price to rent a USED tuba is: $50 a month";
+    }
+</script>
+<h3 id="priceDisplay">Please Select A Rental Type</h3>

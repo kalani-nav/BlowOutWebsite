@@ -12,8 +12,14 @@
 }
 
 .instruments {
-    height: auto;
+    height: 20em;
     width: 25em;
     border-radius: 25px;
     box-shadow: 10px 10px 5px grey;
+}
+.RTitle {
+
+}
+.rentalHeader {
+
 }

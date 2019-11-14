@@ -3,5 +3,21 @@
     ViewBag.Title = "Saxophone";
 }
 
-<h2>Saxophone</h2>
-
+<h1>Saxophone</h1>
+<img src="~/Content/images/saxophone.jpg" />
+<br />
+<br />
+<br />
+<br />
+<button onclick="myNewFunction()">New</button>
+<span>&nbsp;&nbsp;</span>
+<button onclick="myUsedFunction()">Used</button>
+<script>
+    function myNewFunction() {
+        document.getElementById("priceDisplay").innerHTML = "The Price to rent a NEW saxophone is: $42 a month";
+    }
+    function myUsedFunction() {
+        document.getElementById("priceDisplay").innerHTML = "The Price to rent a USED saxophone is: $30 a month";
+    }
+</script>
+<h3 id="priceDisplay">Please Select A Rental Type</h3>
