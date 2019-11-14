@@ -1,0 +1,19 @@
+﻿/*this is my custom css file for the project*/
+
+.myFooterText {
+    font-family: 'Segoe UI';
+}
+
+.mainImage {
+    height: auto;
+    width: 40em;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.instruments {
+    height: auto;
+    width: 25em;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey;
+}
