@@ -15,7 +15,7 @@ namespace BlowOut.Controllers
 
         public ActionResult Rentals()
         {
-            ViewBag.SelectInstrument = "Select Instrument";
+            ViewBag.SelectInstrument = "Select An Instrument To Rent";
             return View();
         }
 

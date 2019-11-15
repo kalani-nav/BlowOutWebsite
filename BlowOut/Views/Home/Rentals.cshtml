@@ -2,11 +2,15 @@
 @{
     ViewBag.Title = "Rentals";
 }
-
-<div class="rentalHeader">
-<h2 class="text-center RTitle">Rentals</h2>
-<h3>@ViewBag.SelectInstrument</h3>
+<br />
+<br />
+<br /><div class="rentalHeader text-center">
+    <h2 class="text-center RTitle">Rentals</h2>
+    <h3>@ViewBag.SelectInstrument</h3>
 </div>
+<br />
+<br />
+<br />
 <!--Trumpet-->
 <a href='@Url.Action("Trumpet", "Home")'>
     <img class="instruments" src="~/Content/images/trumpet.jpg" />

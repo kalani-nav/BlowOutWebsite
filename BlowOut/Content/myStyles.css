@@ -18,8 +18,11 @@
     box-shadow: 10px 10px 5px grey;
 }
 .RTitle {
-
+    font-size: 7rem;
+    background-color:lightslategray;
 }
 .rentalHeader {
-
+    border: 3px solid black;
+    padding-left: 20px;
+    padding-right:20px;
 }
