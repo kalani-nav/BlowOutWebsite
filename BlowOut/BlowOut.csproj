@@ -141,6 +141,7 @@
     <Content Include="Content\images\trombone.jpg" />
     <Content Include="Content\images\trumpet.jpg" />
     <Content Include="Content\images\tuba.jpg" />
+    <Content Include="Content\myFooterText.css" />
     <Content Include="Content\myStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

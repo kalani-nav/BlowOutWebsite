@@ -10,8 +10,16 @@
     <p><em>"It's easy to play any musical instrument: all you have to do is touch the right key at the right time and the instrument will play itself”.<br />- Johann Sebastian Bach</em></p>
 </div>
 <br />
+<div style="text-align:center">
+    @Html.ActionLink("Rentals", "Rentals", "Home", null, new { @class = " btn btn-primary btn-lg", @style = "background-color:black;color:white;width:200px;height:50px;" })
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    @Html.ActionLink("About", "About", "Home", new { @class = " btn btn-primary btn-lg", @style = "background-color:black;color:white;width:200px;height:50px;" })
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    @Html.ActionLink("Contact", "Index", "Contact", null, new { @class = " btn btn-primary btn-lg", @style = "background-color:black;color:white;width:200px;height:50px;" })
+</div>
 <br />
-<div>
+<br />
+<div class="middleData">
     <h2>Rent New and Used Musical Instruments</h2>
     <p style="font-size:1.5em">
         Our mission is to provide you an easy way to rent new and used instruments. <strong>Go pursue your musical dreams!</strong>
@@ -21,4 +29,8 @@
     <div style="text-align:center">
         <img class="mainImage" src="~/Content/images/musical_instruments.jpg" />
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
 </div>
