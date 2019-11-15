@@ -135,6 +135,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\clarinet.jpg" />
     <Content Include="Content\images\flute.jpg" />
+    <Content Include="Content\images\Music.jpg" />
     <Content Include="Content\images\musical_instruments.jpg" />
     <Content Include="Content\images\saxophone.jpg" />
     <Content Include="Content\images\trombone.jpg" />
