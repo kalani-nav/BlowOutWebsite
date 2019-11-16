@@ -10,7 +10,9 @@
     border: black 3px solid;
     box-shadow: 10px 10px 5px grey;
 }
-
+.showInstruments {
+    width: 40em;
+}
 .instruments {
     height: 20em;
     width: 25em;
