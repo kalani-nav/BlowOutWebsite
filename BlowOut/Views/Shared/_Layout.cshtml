@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-<link href="~/Content/Site.css" rel="stylesheet" />
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,38 +9,35 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        @Html.ActionLink("BlowOut Instrument Rentals", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Rentals", "Rentals", "Home")
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("About", "About", "Home")
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Contact", "Contact", "Home")
-                </li>
-            </ul>
-        </div>
-    </nav>
-            <div class="container body-content">
-                @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - BlowOut Instrument Rentals</p>
-                </footer>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("BlowOut Instrument Rentals", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Rentals", "Rentals", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BlowOut Instrument Rentals</p>
+        </footer>
+    </div>
 
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

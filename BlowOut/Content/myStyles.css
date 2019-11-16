@@ -7,13 +7,36 @@
 .mainImage {
     height: auto;
     width: 40em;
-    border-radius: 25px;
+    border: black 3px solid;
     box-shadow: 10px 10px 5px grey;
 }
 
 .instruments {
-    height: auto;
+    height: 20em;
     width: 25em;
     border-radius: 25px;
     box-shadow: 10px 10px 5px grey;
+}
+.RTitle {
+    font-size: 7rem;
+    background-color: rgb(121, 130, 143);
+}
+.CTitle {
+    font-size: 3rem;
+    background-color: rgb(121, 130, 143);
+    padding: 20px;
+}
+.rentalHeader {
+    border: 3px solid black;
+    padding-left: 20px;
+    padding-right:20px;
+}
+
+.homePage {
+    background-color: rgb(121, 130, 143);
+    border: 3px solid black;
+}
+.middleData {
+    background-color: rgb(234, 234, 234);
+    padding:15px;
 }
