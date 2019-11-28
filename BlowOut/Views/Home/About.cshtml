@@ -1,14 +1,91 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "About";
 }
-
-<br />
-<br />
-<br />
-@{<div class="rentalHeader text-center">
-        <h2 class="text-center RTitle">About</h2>
-        <h3>all about the company</h3>
+@{<div class="text-center">
+        <div class="rentalHeader jumbo">
+            <h2 class="text-center RTitle">World's Best Instrument Rentals</h2>
+            <h3>Thanks for visiting our website. We are BlowOut Instrument Rentals.</h3>
+            <div class="founder" style="margin-bottom: 5%">
+                <h3>Gaius Julius Caesar</h3>
+                <h4>Founder of BlowOut Instrument Rental</h4>
+                <img style="height: 500px" src="~/Content/images/julius-caesar-marble-statue-615344.jpg" />
+                <h3>
+                    The founder of BlowOut Instrument Rentals is Julius Caesar, a Roman dictator, musician, and military general who played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire.
+                </h3>
+            </div>
+            <div class="about-us">
+                <div>
+                    <h3>
+                        We have been in the industry for over 30 years and have worked with various well-known artist in all sizes of activities.
+                    </h3>
+                    <img style="width: 20vw" src="~/Content/images/fall_out_boy_band.jpg" />
+                    <figcaption>Fall Out Boy rented our guitars for their 2018 world tour.</figcaption>
+                    <img style="width: 20vw" src="~/Content/images/bowed-string-instrument-boy-cello-classic-555345.jpg" />
+                    <figcaption>Famous street artist Ma-Ma Yo performed the Swan (Saint-Saëns) in Paris with our handmade cello.</figcaption>
+                </div>
+                <div style="align-self:center">
+                    <h3 style="margin:10%">Top Quality, Affordable Price</h3>
+                    <img style="width: 20vw" src="~/Content/images/focal-point-photo-string-of-violin-752535.jpg" />
+                    <h3>
+                        Our mission is to help all customers perform their best in front of the audiances. <br />
+                        This is your moment.
+                    </h3>
+                </div>
+                <div>
+                    <img style="height: 30vh" src="~/Content/images/person-in-black-shirt-playing-brass-colored-saxophone-1049690.jpg" />
+                    <figcaption>We provide more than 100 instruments for all customers.</figcaption>
+                    <h3>
+                        Every employee in BlowOut are trained and check the instruments conditions weekly and right after customers return instruments to us.
+                    </h3>
+                    <img style="width: 20vw; margin-top: 5%" src="~/Content/images/monochrome-photo-of-man-playing-saxophone-1813157.jpg" />
+                    <figcaption>Famous saxophonist Kenny H performed in the Depot with our saxophone.</figcaption>
+                </div>
+            </div>
+            <hr />
+            <div class="social-links">
+                <h2>Follow Us On</h2>
+                <div class="icons">
+                    <a href="https://twitter.com/">
+                        <img src="~/Content/images/twitter.png" />
+                    </a>
+                    <a href="https://www.facebook.com/">
+                        <img src="~/Content/images/facebook.png" />
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="~/Content/images/instagram.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 }
+<style>
+    .about-us {
+        display: grid;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
+    figcaption {
+        margin: 2% 0 4% 0;
+    }
+
+    .icons {
+        display: inline;
+    }
+
+        .icons img {
+            width: 10%;
+            margin: 3%;
+        }
+
+    .jumbo {
+        margin-top: 5%;
+    }
+
+    .social-links {
+        margin: 3% auto 2% auto;
+        width: 50%;
+    }
+</style>

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Summary";
+}
+<br/>
+<br/>
+@{<div>
+      <div class="text-center">
+          <h2 class="text-center RTitle">Confirmation Summary</h2>
+          <br />
+          <br />
+          <img src="@Url.Content(@ViewBag.Instrument.ImageString)" class="instruments" />
+          <h3 class="thankyou">Thank you @ViewBag.Client.FirstName, <br /> For renting the  @ViewBag.Instrument.Name with BlowOut Instrument Rentals</h3>
+      </div>
+    <br />
+    <br />
+    <div class="details">
+        <div class="card">
+            <h2 class="sumTitle text-center">Rental Request Details</h2>
+            <hr />
+            <div class="orderdet">
+                <h3>OrderNumber:  @ViewBag.Client.ClientID </h3>
+                <h3>Customer Name: @ViewBag.Client.FirstName @ViewBag.Client.LastName </h3>
+                <h3>Instrument:  @ViewBag.Instrument.Type @ViewBag.Instrument.Name</h3>
+                <h3>Monthly Price: $@ViewBag.Instrument.Price</h3>
+            </div>
+            <br />
+            <h3 class="text-center">Total Amount Paid after 18 months: $@(@ViewBag.Instrument.Price * 18)</h3>
+            <p class="text-center">
+                After 18 months has been achieved in rental time, you will own the instrument. If you return it at any time before 3 months
+                there will be a $200 re-stocking fee. If you return it after 3 months you will forfeit any equity in the instrument.
+            </p>
+            <br />
+        </div>
+    </div>
+</div>
+}
+<style>
+    .orderdet {
+        padding-left: 100px;
+    }
+    .thankyou {
+        font-family: sans-serif;
+    }
+    .sumTitle {
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
+    .card {
+        padding: 10px;
+        font-family: Rockwell;
+        background-color: black;
+        color: white;
+        opacity: .7;
+        border: 1px dashed white;
+        position: relative;
+        margin: auto;
+        padding-top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 70%;
+        box-shadow: 10px 10px grey;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .card hr {
+            width: 80%;
+        }
+
+    .container {
+        padding: 2px 16px;
+    }
+</style>

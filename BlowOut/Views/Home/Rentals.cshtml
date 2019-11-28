@@ -1,5 +1,4 @@
-﻿
-
+﻿@model IEnumerable<BlowOut.Models.Instrument>
 <br />
 <br />
 <br />
@@ -10,39 +9,17 @@
     ViewBag.Title = "Rentals";
 }
 
-  <div class="text-center">
-      <br />
-      <br />
-      <br />
-      <!--Trumpet-->
-      <a href='@Url.Action("Trumpet", "Home")'>
-          <img class="instruments" src="~/Content/images/trumpet.jpg" />
-      </a>
-      <span>&nbsp;&nbsp;</span>
-      <!--Trombone-->
-      <a href='@Url.Action("Trombone", "Home")'>
-          <img class="instruments" src="~/Content/images/trombone.jpg" />
-      </a>
-      <span>&nbsp;&nbsp;</span>
-      <!--Tuba-->
-      <a href='@Url.Action("Tuba", "Home")'>
-          <img class="instruments" src="~/Content/images/tuba.jpg" />
-      </a>
-      <br />
-      <br />
-      <br />
-      <!--Flute-->
-      <a href='@Url.Action("Flute", "Home")'>
-          <img class="instruments" src="~/Content/images/flute.jpg" />
-      </a>
-      <span>&nbsp;&nbsp;</span>
-      <!--Clarinet-->
-      <a href='@Url.Action("Clarinet", "Home")'>
-          <img class="instruments" src="~/Content/images/clarinet.jpg" />
-      </a>
-      <span>&nbsp;&nbsp;</span>
-      <!--Saxophone-->
-      <a href='@Url.Action("Saxophone", "Home")'>
-          <img class="instruments" src="~/Content/images/saxophone.jpg" />
-      </a>
-  </div>
+
+  <div class="container retalsList">
+      <div class="row">
+          @foreach (var item in Model)
+          {
+          <div class="col-sm-6 text-center">
+              <a href='@Url.Action("Create", "Home", new { id = @item.InstrumentID })'>
+                  <img src="@Url.Content(item.ImageString)" class="instruments" />
+                  <p class="instTitle text-center">@item.Type - @item.Name </p>
+              </a>
+          </div>
+          }
+      </div>
+   </div>
