@@ -232,6 +232,7 @@
     <Content Include="Views\Home\Summary.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\UpdateData\UpdateData.cshtml" />
     <Content Include="Views\UpdateData\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
