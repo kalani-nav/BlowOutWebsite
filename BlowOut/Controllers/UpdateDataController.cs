@@ -19,10 +19,13 @@ namespace BlowOut.Controllers
             {
                 ClientInstuments newClientInst = new ClientInstuments();
                 newClientInst.instruments = instrument;
-                newClientInst.clients = db.Clients.Find(instrument.ClientID);
+                if (instrument.ClientID != 0)
+                {
+                    newClientInst.clients = db.Clients.Find(instrument.ClientID);
+                }
                 ClientInstuments.Add(newClientInst);
             }
-            return View(ClientInstuments);
+            return View(ClientInstuments.ToList());
         }
     }
 }
