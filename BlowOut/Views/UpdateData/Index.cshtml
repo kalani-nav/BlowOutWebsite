@@ -72,38 +72,11 @@
         <td>none</td>
         <td>none</td>
         }
-        @*<td>
-            @Html.DisplayFor(model => model.instruments.ClientID)
-        </td>
         <td>
-            @Html.DisplayFor(model => model.clients.FirstName)
+            @Html.ActionLink("Details", "See Client Info", new { id = @item.instruments.ClientID}) |
+            @Html.ActionLink("Edit", "Edit Client Info", new { id = item.instruments.ClientID}) |
+            @Html.ActionLink("Delete", "Delete Client Order", new { id = item.instruments.ClientID})
         </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.City)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.State)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Phone)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.InstrumentID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.InstrumentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.InstrumentID })
-        </td>*@
     </tr>
     }
 
