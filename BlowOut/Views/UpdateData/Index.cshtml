@@ -7,7 +7,6 @@
         <th>
             @Html.DisplayNameFor(model => model.instruments.Name)
         </th>
-        <th>Image</th>
         <th>
             @Html.DisplayNameFor(model => model.instruments.Type)
         </th>
@@ -46,37 +45,37 @@
 
     @foreach (var item in Model)
     {
-    <tr> 
+    <tr>
         <td>
             @item.instruments.Name
         </td>
-        <td>Image</td>
         <td>
             @item.instruments.Type
         </td>
         <td>
             @item.instruments.Price
         </td>
-        <td>
-            @item.instruments.ClientID
-        </td>
-        @if(@item.instruments.ClientID != 0){
+        @if (@item.instruments.ClientID != 0)
+        {
+            <td>
+                @item.instruments.ClientID
+            </td>
             <td>
                 @item.clients.FirstName
             </td>
             <td>
                 @item.clients.LastName
             </td>
+            <td>
+                @Html.ActionLink("See Client Info", "Details", new { id = @item.instruments.ClientID }) &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+                @Html.ActionLink("Edit Client Info", "Edit", new { id = @item.instruments.ClientID })  &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;
+                @Html.ActionLink("Delete Client Order", "Delete", new { id = @item.instruments.ClientID, InsID = @item.instruments.InstrumentID })
+            </td>
         }
-        else {
-        <td>none</td>
-        <td>none</td>
+        else
+        {
+            <td>none</td>
         }
-        <td>
-            @Html.ActionLink("See Client Info", "Details", new { id = @item.instruments.ClientID }) &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
-            @Html.ActionLink("Edit Client Info", "Edit", new { id = item.instruments.ClientID })  &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;
-            @Html.ActionLink("Delete Client Order", "Delete", new { id = item.instruments.ClientID })
-        </td>
     </tr>
     }
 

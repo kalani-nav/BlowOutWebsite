@@ -90,31 +90,38 @@ namespace BlowOut.Controllers
             return View(instrument);
         }
 
-        // GET: Instruments/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Clients/Delete/5
+        public ActionResult Delete(int? id, int? InsID)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Instrument instrument = db.Instruments.Find(id);
-            if (instrument == null)
+            Client client = db.Clients.Find(id);
+            if (client == null)
             {
                 return HttpNotFound();
             }
-            return View(instrument);
+            return View(client);
         }
 
-        // POST: Instruments/Delete/5
+        // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, int? InsID)
         {
-            Instrument instrument = db.Instruments.Find(id);
-            db.Instruments.Remove(instrument);
+            Instrument instrument = db.Instruments.FirstOrDefault(i => i.InstrumentID == InsID);
+            if (instrument == null) return HttpNotFound();
+            instrument.ClientID = 0; // Only OrderID is Updated because client was deleted
+            db.SaveChanges();
+
+            // actually deleting the client
+            Client client = db.Clients.Find(id);
+            db.Clients.Remove(client);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
