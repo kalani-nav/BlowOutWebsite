@@ -1,8 +1,7 @@
-﻿
+﻿@model IEnumerable<BlowOut.Models.ClientInstuments>
 @{
     ViewBag.Title = "Index";
 }
-@model IEnumerable <BlowOut.Models.ClientInstuments>
 <table class="table">
     <tr>
         <th>
@@ -24,7 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.clients.LastName)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.clients.Address)
         </th>
 
@@ -42,53 +41,41 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.clients.Phone)
-        </th>
+        </th>*@
     </tr>
 
     @foreach (var item in Model)
     {
-    <tr>
+    <tr> 
         <td>
-            @Html.DisplayFor(model => model.instruments.Name)
+            @item.instruments.Name
         </td>
         <td>Image</td>
         <td>
-            @Html.DisplayFor(model => model.instruments.Type)
+            @item.instruments.Type
         </td>
         <td>
-            @Html.DisplayFor(model => model.instruments.Price)
+            @item.instruments.Price
         </td>
         <td>
-            @Html.DisplayFor(model => model.instruments.ClientID)
+            @item.instruments.ClientID
         </td>
+        @if(@item.instruments.ClientID != 0){
+            <td>
+                @item.clients.FirstName
+            </td>
+            <td>
+                @item.clients.LastName
+            </td>
+        }
+        else {
+        <td>none</td>
+        <td>none</td>
+        }
         <td>
-            @Html.DisplayFor(model => model.clients.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.City)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.State)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Zip)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.clients.Phone)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.InstrumentID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.InstrumentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.InstrumentID })
+            @Html.ActionLink("See Client Info", "Details", new { id = @item.instruments.ClientID }) &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;
+            @Html.ActionLink("Edit Client Info", "Edit", new { id = item.instruments.ClientID })  &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp;
+            @Html.ActionLink("Delete Client Order", "Delete", new { id = item.instruments.ClientID })
         </td>
     </tr>
     }
