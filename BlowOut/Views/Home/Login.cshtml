@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="log-in">
+    <div class="title">
+        <h1><b>Log in</b></h1>
+    </div>
+    <div class="card">
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.TextBox("Email address", null, new { @class = "form-control", @placeholder = "User Name" })
+            </div>
+            <div class="form-group">
+                @Html.Password("Password", null, new { @class = "form-control", @placeholder = "Password" })
+            </div>
+            <div class="form-group">
+                <div class="login">
+                    <button type="submit" class="btn btn-primary login-button">Login</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*<form method="post">
+    <div class="form-group">
+        <label for="Email address">User Name</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter User Name">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>*@

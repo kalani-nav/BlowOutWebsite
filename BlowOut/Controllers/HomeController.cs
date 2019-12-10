@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using BlowOut.DAL;
 using BlowOut.Models;
 
@@ -125,5 +126,30 @@ namespace BlowOut.Controllers
 
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String email = form["Email address"].ToString();
+            String password = form["Password"].ToString();
+
+            if (email=="Missouri" && password == "ShowMe")
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                return RedirectToAction("UpdateData");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        public ActionResult UpdateData()
+        {
+            return RedirectToAction("Index", "Instruments");
+        }
+
     }
 }
