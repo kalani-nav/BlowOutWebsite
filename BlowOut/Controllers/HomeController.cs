@@ -139,16 +139,17 @@ namespace BlowOut.Controllers
             if (email=="Missouri" && password == "ShowMe")
             {
                 FormsAuthentication.SetAuthCookie(email, rememberMe);
-                return RedirectToAction("UpdateData");
+                return RedirectToAction("Index","UpdateData");
             }
             else
             {
                 return View();
             }
         }
-        public ActionResult UpdateData()
+        public ActionResult Logout()
         {
-            return RedirectToAction("Index", "Instruments");
+            FormsAuthentication.SignOut();
+            return View("Login");
         }
 
     }

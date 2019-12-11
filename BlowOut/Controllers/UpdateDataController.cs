@@ -15,6 +15,7 @@ namespace BlowOut.Controllers
         private RentalsContext db = new RentalsContext();
         public static List<ClientInstuments> ClientInstuments = new List<ClientInstuments>();
         // GET: UpdateData
+        [Authorize]
         public ActionResult Index()
         {
             ClientInstuments.Clear();
@@ -32,6 +33,7 @@ namespace BlowOut.Controllers
             return View(ClientInstuments.ToList());
         }
         // GET: Clients/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -46,6 +48,7 @@ namespace BlowOut.Controllers
             return View(client);
         }
         // GET: Clients/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -65,6 +68,7 @@ namespace BlowOut.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "ClientID,FirstName,LastName,Address,City,State,Zip,Email,Phone")] Client client)
         {
             if (ModelState.IsValid)
@@ -76,6 +80,7 @@ namespace BlowOut.Controllers
             return View(client);
         }
         // GET: Clients/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id, int? InsID)
         {
             if (id == null)
@@ -93,6 +98,7 @@ namespace BlowOut.Controllers
         // POST: Clients/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id, int? InsID)
         {
             Instrument instrument = db.Instruments.FirstOrDefault(i => i.InstrumentID == InsID);
@@ -100,10 +106,10 @@ namespace BlowOut.Controllers
             instrument.ClientID = 0; // Only OrderID is Updated because client was deleted
             db.SaveChanges();
 
-            // actually deleting the client
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
-            db.SaveChanges();
+            //// actually deleting the client
+            //Client client = db.Clients.Find(id);
+            //db.Clients.Remove(client);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
     }
