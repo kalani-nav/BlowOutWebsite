@@ -28,6 +28,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Log Out", "Logout", "Home")</li>
+                        <li style="color:aliceblue; text-align: center; padding-top:15px; font-weight:bolder; padding-left:200px" class="ceb">Welcome @User.Identity.Name !</li>
                     }
                     else
                     {
